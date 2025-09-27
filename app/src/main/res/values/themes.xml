@@ -1,8 +1,25 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.ProyectoPresion001" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Background blanco -->
+        <item name="android:windowBackground">@color/white</item>
+
+
+        <!-- Colores principales (verde pálido) -->
+        <item name="colorPrimary">@color/pale_green</item>
+        <item name="colorOnPrimary">@color/on_pale_green</item>
+        <item name="colorPrimaryContainer">@color/pale_green_variant</item>
+        <item name="colorOnPrimaryContainer">@color/on_pale_green</item>
+
+        <!-- Para componentes Material -->
+        <item name="materialButtonStyle">@style/Widget.ProyectoPresion001.Button</item>
+    </style>
+
+    <style name="Widget.ProyectoPresion001.Button" parent="Widget.Material3.Button">
+        <item name="android:backgroundTint">@color/pale_green</item>
+        <item name="android:textColor">@color/on_pale_green</item>
     </style>
 
     <style name="Theme.ProyectoPresion001" parent="Base.Theme.ProyectoPresion001" />

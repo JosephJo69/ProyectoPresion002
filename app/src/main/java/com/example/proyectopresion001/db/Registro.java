@@ -3,8 +3,8 @@ package com.example.proyectopresion001.db;
 public class Registro {
     private long id;
     private int sistolica;
-    private int diastolica;
-    private int edad;
+    private Integer diastolica;
+    private Integer edad;
     private String fecha;
 
     public Registro() {}
@@ -15,11 +15,11 @@ public class Registro {
     public int getSistolica() { return sistolica; }
     public void setSistolica(int sistolica) { this.sistolica = sistolica; }
 
-    public int getDiastolica() { return diastolica; }
-    public void setDiastolica(int diastolica) { this.diastolica = diastolica; }
+    public Integer getDiastolica() { return diastolica; }
+    public void setDiastolica(Integer diastolica) { this.diastolica = diastolica; }
 
-    public int getEdad() { return edad; }
-    public void setEdad(int edad) { this.edad = edad; }
+    public Integer getEdad() { return edad; }
+    public void setEdad(Integer edad) { this.edad = edad; }
 
     public String getFecha() { return fecha; }
     public void setFecha(String fecha) { this.fecha = fecha; }

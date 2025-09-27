@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!-- Verde pálido para botones y elementos acento -->
+    <color name="pale_green">#CFEBD7</color>
+    <color name="pale_green_variant">#A6D9B8</color>
+    <color name="on_pale_green">#FF000000</color>
 </resources>

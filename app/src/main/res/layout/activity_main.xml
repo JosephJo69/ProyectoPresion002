@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:padding="16dp"
     tools:context=".MainActivity">
 
@@ -12,9 +13,10 @@
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Control de Presión Arterial"
+        android:text="@string/title_main"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_marginTop="32dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:hint="Presión Sistólica (mm Hg) *"
+        android:hint="@string/hint_sistolica"
         app:layout_constraintTop_toBottomOf="@id/titleTextView">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -39,7 +41,7 @@
         android:id="@+id/sistolicaRequired"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Este campo es obligatorio"
+        android:text="@string/required_sistolica"
         android:textColor="#FF0000"
         android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@id/sistolicaLayout"
@@ -50,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="Presión Diastólica (mm Hg)"
+        android:hint="@string/hint_diastolica"
         app:layout_constraintTop_toBottomOf="@id/sistolicaRequired">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -65,7 +67,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="Edad"
+        android:hint="@string/label_edad"
         app:layout_constraintTop_toBottomOf="@id/diastolicaLayout">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -79,7 +81,9 @@
         android:id="@+id/consultarButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Consultar"
+        android:text="@string/btn_consultar"
+        android:backgroundTint="@color/pale_green"
+        android:textColor="@color/on_pale_green"
         android:layout_marginTop="32dp"
         app:layout_constraintTop_toBottomOf="@id/edadLayout"/>
 
@@ -87,7 +91,9 @@
         android:id="@+id/historialButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ver Historial"
+        android:text="@string/btn_ver_historial"
+        android:backgroundTint="@color/pale_green"
+        android:textColor="@color/on_pale_green"
         android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@id/consultarButton"/>
 

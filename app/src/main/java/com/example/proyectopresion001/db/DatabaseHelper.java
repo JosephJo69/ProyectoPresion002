@@ -62,8 +62,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Registro registro = new Registro();
                 registro.setId(cursor.getLong(cursor.getColumnIndex(COLUMN_ID)));
                 registro.setSistolica(cursor.getInt(cursor.getColumnIndex(COLUMN_SISTOLICA)));
-                registro.setDiastolica(cursor.getInt(cursor.getColumnIndex(COLUMN_DIASTOLICA)));
-                registro.setEdad(cursor.getInt(cursor.getColumnIndex(COLUMN_EDAD)));
+                int idxDia = cursor.getColumnIndex(COLUMN_DIASTOLICA);
+                if (idxDia >= 0 && !cursor.isNull(idxDia)) {
+                    registro.setDiastolica(cursor.getInt(idxDia));
+                } else {
+                    registro.setDiastolica(null);
+                }
+                int idxEdad = cursor.getColumnIndex(COLUMN_EDAD);
+                if (idxEdad >= 0 && !cursor.isNull(idxEdad)) {
+                    registro.setEdad(cursor.getInt(idxEdad));
+                } else {
+                    registro.setEdad(null);
+                }
                 registro.setFecha(cursor.getString(cursor.getColumnIndex(COLUMN_FECHA)));
                 registros.add(registro);
             } while (cursor.moveToNext());

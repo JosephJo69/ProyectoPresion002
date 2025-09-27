@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">ProyectoPresion001</string>
+    <string name="title_main">Control de Presión Arterial</string>
+    <string name="hint_sistolica">Presión Sistólica (mm Hg) *</string>
+    <string name="required_sistolica">Este campo es obligatorio</string>
+    <string name="hint_diastolica">Presión Diastólica (mm Hg)</string>
+    <string name="label_edad">Edad</string>
+    <string name="btn_consultar">Consultar</string>
+    <string name="btn_ver_historial">Ver Historial</string>
+    <string name="historial_title">Historial de Registros</string>
+    <string name="btn_volver">Volver</string>
+    <string name="resultado_title">Resultado del Análisis</string>
 </resources>

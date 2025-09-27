@@ -5,8 +5,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.proyectopresion001.db.DatabaseHelper;
 import com.example.proyectopresion001.db.Registro;
 import java.util.List;
@@ -43,17 +45,21 @@ public class HistorialActivity extends AppCompatActivity {
             TextView textView = new TextView(parent.getContext());
             textView.setPadding(16, 16, 16, 16);
             textView.setTextSize(16);
+            // Asegurar que el texto sea negro para buena legibilidad
+            textView.setTextColor(ContextCompat.getColor(parent.getContext(), R.color.black));
             return new RegistroViewHolder(textView);
         }
 
         @Override
         public void onBindViewHolder(RegistroViewHolder holder, int position) {
             Registro registro = registros.get(position);
-            String texto = String.format("Fecha: %s\nSistólica: %d\nDiastólica: %d\nEdad: %d\n",
+            String diastolicaStr = registro.getDiastolica() != null ? registro.getDiastolica().toString() : "No proporcionada";
+            String edadStr = registro.getEdad() != null ? registro.getEdad().toString() : "No proporcionada";
+            String texto = String.format("Fecha: %s\nSistólica: %d\nDiastólica: %s\nEdad: %s\n",
                     registro.getFecha(),
                     registro.getSistolica(),
-                    registro.getDiastolica(),
-                    registro.getEdad());
+                    diastolicaStr,
+                    edadStr);
             holder.textView.setText(texto);
         }
 
