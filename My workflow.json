@@ -1,0 +1,134 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "b8ee7483-2ce4-419a-abe8-ee09ad48c14e",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -256,
+        0
+      ],
+      "id": "2caf6df2-e5e4-4128-b195-f868d8ad810e",
+      "name": "Webhook",
+      "webhookId": "b8ee7483-2ce4-419a-abe8-ee09ad48c14e"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1D8EVQTK9QzJ100gVJCK0LHfJtgQuOygyRAudA-Z_l5w",
+          "mode": "list",
+          "cachedResultName": "Registro Presion",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1D8EVQTK9QzJ100gVJCK0LHfJtgQuOygyRAudA-Z_l5w/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1D8EVQTK9QzJ100gVJCK0LHfJtgQuOygyRAudA-Z_l5w/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Sistólica": "={{ $json.body.sistolica }}",
+            "Diastólica": "={{ $json.body.diastolica }}",
+            "Edad": "={{ $json.body.edad }}",
+            "Fecha": "={{ $json.body.fecha }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Sistólica",
+              "displayName": "Sistólica",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Diastólica",
+              "displayName": "Diastólica",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Edad",
+              "displayName": "Edad",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -16,
+        0
+      ],
+      "id": "070baa04-dd14-4bd8-bb0a-1f58e746db87",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "NTEBess0D5EGJbLE",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "4b5bcf73-d29f-44bb-82c1-1e766a9fa1b8",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "eb151a39d5c7382ee79623754bd13a4290d64a92738ebd1a50f18b29db283ff5"
+  },
+  "id": "vJQcuRakRzlh8gHd",
+  "tags": []
+}
